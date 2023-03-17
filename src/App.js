@@ -1,24 +1,20 @@
-import './App.css';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import ListUser from './Components/ListUser';
-import CreateUser from './Components/CreateUser';
-import EditUser from './Components/EditUser';
+import "./Scss/style.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import BasicNavbar from './Components/Nav';
+import List from './Components/List';
+import Create from './Components/Create';
+import Edit from './Components/Edit';
+
 
 function App() {
   return (
     <div className="App">
-      <p>CRUD With React & PHP</p>
       <BrowserRouter>
-        <nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="./create">Create</Link></li>
-          </ul>
-        </nav>
+      <BasicNavbar />
         <Routes>
-          <Route path="/" element={<ListUser />}></Route>
-          <Route path="/create" element={<CreateUser />}></Route>
-          <Route path="/edit/:id" element={<EditUser />}></Route>
+          <Route path="/" element={<List />}></Route>
+          <Route path="/create" element={<Create />}></Route>
+          <Route path="/edit/:id" element={<Edit />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
